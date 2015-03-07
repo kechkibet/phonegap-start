@@ -18,9 +18,16 @@ Page 1
 <div data-role="page" id="loginpage">
 	<script type="text/javascript">
 		function pincheck(){
-			alert("Welcome "+$('[name="pin"]').val());
-			$.mobile.changePage( "#page2", { reverse: false, transition: "slideup"});
-			return true;
+			var pin=$('[name="pin"]').val();
+			
+			if (pin=="5923"){
+				alert("Welcome "+pin);
+				$.mobile.changePage( "#page2", { reverse: false, transition: "slideup"});
+				return true;
+			}
+			else{
+				alert("");
+			}
 		}
 	</script>
   <div data-role="header">
@@ -30,7 +37,7 @@ Page 1
   <div data-role="main" class="ui-content">
     <form onsubmit="return pincheck()" data-ajax="false">
 		<label>
-			Enter PIN:<input type="password" name="pin"/>
+			Enter PIN:<input type="password" name="pin" style="text-align:center;" maxlength="5"/>
 		</label>
 		<button id="login">Login</button>
     </form>
