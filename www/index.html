@@ -9,12 +9,18 @@
 <body>
 
 <div data-role="page">
+	<script type="text/javascript">
+		function pincheck(){
+			alert("Button clicked");
+			return false;
+		}
+	</script>
   <div data-role="header">
     <h2>Welcome</h2>
   </div>
 
   <div data-role="main" class="ui-content">
-    <form>
+    <form onsubmit="return pincheck()">
 		<label>
 			Enter PIN:<input type="password" name="pin"/>
 		</label>
