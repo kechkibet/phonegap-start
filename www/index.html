@@ -5,7 +5,14 @@
 <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
 <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
 <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-
+<style type="text/css">
+	.footerContainer{
+		width:97%;
+		height:38px;
+		border:none;
+		position:relative;
+		}
+</style>
 </head>
 <body>
 
@@ -46,7 +53,9 @@ Page 1
   
 
   <div data-role="footer">
-    <i>&copy; NSSF, 2015</i>
+	<div class="footerContainer">  
+		<i>&copy; NSSF, 2015</i>
+	</div>
   </div>
 </div> 
 
@@ -58,19 +67,34 @@ Page 2
 
 <div data-role="page" id="page2">
   <div data-role="header">
-    <b>Home</b>
+    <h1>HOME</h1>
   </div>
 
   <div data-role="main" class="ui-content">
     <ul data-role="listview">
-      <li><a href="#">List Item</a></li>
-      <li><a href="#">List Item</a></li>
-      <li><a href="#">List Item</a></li>
+      <li><a href="#payroll">Payroll List</a></li>
+      <li><a href="#">SF24 List</a></li>
     </ul>
   </div>
+</div> 
 
-  <div data-role="footer">
-    <i>&copy; NSSF, 2015</i>
+<!--
+
+	Payroll page
+
+-->
+
+<div data-role="page" id="payroll">
+  <div data-role="header">
+    <h1>PAYROLL</h1>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <ul data-role="listview">
+      <li><a href="#">JOHN DOE</a></li>
+      <li><a href="#">JANE DOE</a></li>
+      <li><a href="#">EMMANUEL KISILA</a></li>
+    </ul>
   </div>
 </div> 
 
