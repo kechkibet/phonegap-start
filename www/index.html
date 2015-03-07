@@ -8,11 +8,18 @@
 </head>
 <body>
 
+
+<!--
+
+Page 1
+
+-->
 <div data-role="page" id="loginpage">
 	<script type="text/javascript">
 		function pincheck(){
 			alert("Welcome "+$('[name="pin"]').val());
-			return false;
+			$.mobile.changePage( "#page2", { transition: "slideup", changeHash: false });
+			return true;
 		}
 	</script>
   <div data-role="header">
