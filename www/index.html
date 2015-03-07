@@ -19,7 +19,7 @@ Page 1
 	<script type="text/javascript">
 		function pincheck(){
 			alert("Welcome "+$('[name="pin"]').val());
-			$.mobile.changePage( "#page2", { transition: "slideup", changeHash: false });
+			$.mobile.changePage( "#page2", { reverse: false, transition: "slideup"});
 			return true;
 		}
 	</script>
