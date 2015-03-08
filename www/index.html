@@ -86,27 +86,27 @@ Page 2
 
 <div data-role="page" id="payroll">
   <div data-role="header">
-    <h1>PAYROLL</h1><a class="ui-btn-right" href="#newpay" data-icon="plus" data-theme="b">New</a>
+    <h1>PAYROLL</h1><a class="ui-btn-right" href="#formpay" data-icon="plus" data-theme="b">New</a>
   </div>
 
   <div data-role="main" class="ui-content">
     <ul data-role="listview">
       <li>
-		<a href="#">
+		<a href="#formpay">
 			<h2>JOHN DOE</h2>
 			<p>Income : Ksh. <b>35,000</b><p>
 			<p>Voluntary : Ksh. <b>1,000</b><p>
 		</a>
 	  </li>
       <li>
-		<a href="#">
+		<a href="#formpay">
 			<h2>JANE DOE</h2>
 			<p>Income : Ksh. <b>35,000</b><p>
 			<p>Voluntary : Ksh. <b>1,000</b><p>
 		</a>
 	  </li>
       <li>
-		<a href="#">
+		<a href="#formpay">
 			<h2>EMMANUEL KISILA</h2>
 			<p>Income : Ksh. <b>35,000</b><p>
 			<p>Voluntary : Ksh. <b>1,000</b><p>
@@ -119,18 +119,43 @@ Page 2
 
 <!--
 
-	New payroll entry page
+	Payroll form
 
 -->
 
 
-<div data-role="page" id="newpay">
+<div data-role="page" id="formpay">
   <div data-role="header">
-    <h1>NEW PAYROLL</h1><a class="ui-btn-right" href="#" data-icon="check" data-theme="b">Save</a>
+    <h1>NEW PAYROLL</h1><a class="ui-btn-right" href="#" data-icon="check" data-direction="reverse" data-theme="b">Save</a>
   </div>
 
   <div data-role="main" class="ui-content">
-    Form here...
+    <form>
+		<label>
+			Employee NSSF number:
+			<input type="numeric" id="nssfno"/>
+		</label>
+		<label>
+			Employee first name:
+			<input type="text" id="fname"/>
+		</label>
+		<label>
+			Employee other names:
+			<input type="text" id="othernames"/>
+		</label>
+		<label>
+			Employee national ID number:
+			<input type="numeric" id="idno"/>
+		</label>
+		<label>
+			Employee income:
+			<input type="numeric" id="income"/>
+		</label>
+		<label>
+			Employee voluntary contribution:
+			<input type="numeric" id="voluntary"/>
+		</label>
+    </form>
   </div>
 </div> 
 
