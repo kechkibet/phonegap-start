@@ -45,7 +45,7 @@ Page 1
   <div data-role="main" class="ui-content">
     <form onsubmit="return pincheck()" data-ajax="false">
 		<label>
-			Enter PIN:<input type="password" name="pin" style="text-align:center;" maxlength="5"/>
+			Enter PIN:<input type="password" pattern="[0-9]*" name="pin" style="text-align:center;" maxlength="5"/>
 		</label>
 		<button id="login">Login</button>
     </form>
