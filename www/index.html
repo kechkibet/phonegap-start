@@ -29,7 +29,7 @@ Page 1
 			
 			if (pin=="5923"){
 				alert("Welcome "+pin);
-				$.mobile.changePage("#page2");
+				$.mobile.changePage("#compage");
 				return true;
 			}
 			else{
@@ -62,6 +62,34 @@ Page 1
 <!--
 
 Page 2
+
+-->
+
+<div data-role="page" id="compage">
+  <div data-role="header">
+    <h1>SELECT COMPANY</h1><a class="ui-btn-right" href="#" data-icon="plus" data-theme="b">New</a>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <ul data-role="listview">
+      <li><a href="#page2">
+		<h2>VERVE K.O. LTD</h2>
+		<p>PIN: <b>AA12BB34DD</b></p>
+		<p>Employer IP: <b>1234567</b></p>
+	  </a></li>
+      <li><a href="#page2">
+		<h2>ZINGA TECHNOLOGIES LTD</h2>
+		<p>PIN: <b>AA12BB34DD</b></p>
+		<p>Employer IP: <b>1234567</b></p>
+	  </a></li>
+    </ul>
+  </div>
+</div> 
+
+
+<!--
+
+Home page
 
 -->
 
