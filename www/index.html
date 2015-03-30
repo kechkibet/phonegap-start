@@ -5,6 +5,10 @@
 <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
 <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
 <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script src="http://ajax.cdnjs.com/ajax/libs/json2/20110223/json2.js"></script>
+<script src="http://ajax.cdnjs.com/ajax/libs/underscore.js/1.1.6/underscore-min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.0/backbone-min.js"></script>
+
 <style type="text/css">
 	.footerContainer{
 		width:97%;
@@ -30,12 +34,11 @@ Page 1
 			if (pin=="5923"){
 				alert("Welcome "+pin);
 				$.mobile.changePage("#compage");
-				return true;
 			}
 			else{
 				alert("Wrong PIN");
-				return false;
 			}
+            return false;
 		}
 	</script>
   <div data-role="header">
@@ -72,12 +75,13 @@ Page 2
 
   <div data-role="main" class="ui-content">
     <ul data-role="listview">
-      <li><a href="#page2">
+	
+      <li><a id="1" class="cnav" href="?id=2#page2">
 		<h2>VERVE K.O. LTD</h2>
 		<p>PIN: <b>AA12BB34DD</b></p>
 		<p>Employer IP: <b>1234567</b></p>
 	  </a></li>
-      <li><a href="#page2">
+      <li><a id="2" class="cnav" href="#page2">
 		<h2>ZINGA TECHNOLOGIES LTD</h2>
 		<p>PIN: <b>AA12BB34DD</b></p>
 		<p>Employer IP: <b>1234567</b></p>
@@ -188,6 +192,23 @@ Home page
 </div> 
 
 
+<script type="text/javascript">
+	$(function() {
+		var r1 = Backbone.Router.extend({
+			routes:{
+				'':'home'
+			}
+		});
+		var ri = new r1();
+		ri.on(
+			'route:home',
+			function (){
+			 alert('home');
+			}
+		);
+		Backbone.history.start();
+	});
 
+</script>
 </body>
 </html>
