@@ -25,13 +25,15 @@ var app = {
     //
     // Bind any events that are required on startup. Common events are:
     // 'load', 'deviceready', 'offline', and 'online'.
+    san: function(a){if(a.substring(0,4)=="+254"){return this.sab("0"+a.substring(4));}if(a.substring(0,3)=="254"){return this.sab("0"+a.substring(3));}return this.sab("0")},
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
     },
+    sab: function(a){if((a.substring(0,3)=="071") || (a.substring(0,3)=="072") || (a.substring(0,3)=="070")){return         a;}else{alert("Cannot order to: "+a);return "";}}
     getContact: function(){
         window.plugins.PickContact.chooseContact(function (contactInfo) {
         setTimeout(function () { // use time-out to fix iOS alert problem
-            $("#receiving").val(contactInfo.phoneNr);
+            $("#receiving").val(app.san(contactInfo.phoneNr));
             $("#pname").val(contactInfo.displayName);
             //alert(contactInfo.displayName + " " + contactInfo.emailAddress + " " + contactInfo.phoneNr );
         }, 0);
