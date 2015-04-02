@@ -26,17 +26,55 @@
         <meta name="msapplication-tap-highlight" content="no" />
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="st<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">ylesheet" type="text/css" href="css/index.css" />
         <title>Hello World</title>
     </head>
     <body>
-        <div class="app">
-            <h1>PhoneGap</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
+        
+        <div data-role="page" id="neworder">
+          <div data-role="header">
+            <h2>ADD PAYMENT</h2>
+              <a href="#listpage" class="ui-btn-right" data-icon="plus">Add</a>
+          </div>
+
+          <div data-role="main" class="ui-content">
+              <form id="frmorder">
+                <label>Name</label>
+                <input type="text" id="pname" name="pname"/>
+                <label>Phone number/ Paybill number</label>
+                <input type="tel" id="receiving" name="receiving"/>
+                <label>Amount</label>
+                <input type="number" id="pnumber" name="pnumber"/>
+                <fieldset data-role="controlgroup">
+                    <legend>Repeat period:</legend>
+                        <input type="radio" name="period" id="radio-choice-1" value="choice-1" checked="checked" />
+                        <label for="radio-choice-1">Daily</label>
+
+                        <input type="radio" name="period" id="radio-choice-2" value="choice-2"  />
+                        <label for="radio-choice-2">Weekly</label>
+
+                        <input type="radio" name="period" id="radio-choice-3" value="choice-3"  />
+                        <label for="radio-choice-3">Monthly</label>
+
+                        <input type="radio" name="period" id="radio-choice-4" value="choice-4"  />
+                        <label for="radio-choice-4">Yearly</label>
+                </fieldset>
+                  <label>Start date</label>
+                  <input type="date" data-role="date" name="psdate" id="psdate">
+
+              </form>
+          </div>
+
+
+          <div data-role="footer">
+            <div class="footerContainer">  
+                <i>&copy; VERVE, 2015</i>
             </div>
+          </div>
         </div>
+        <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <script src="angular.min.js"></script>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
