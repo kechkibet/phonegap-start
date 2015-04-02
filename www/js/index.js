@@ -43,6 +43,7 @@ var app = {
         //app.receivedEvent('deviceready');
         $("#btncontacts").click(function(){
             app.getContact();
+            return false;
         });
     },
     // Update DOM on a Received Event
