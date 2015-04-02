@@ -31,7 +31,9 @@ var app = {
     getContact: function(){
         window.plugins.PickContact.chooseContact(function (contactInfo) {
         setTimeout(function () { // use time-out to fix iOS alert problem
-            alert(contactInfo.displayName + " " + contactInfo.emailAddress + " " + contactInfo.phoneNr );
+            $("#receiving").val(contactInfo.phoneNr);
+            $("#pname").val(contactInfo.displayName);
+            //alert(contactInfo.displayName + " " + contactInfo.emailAddress + " " + contactInfo.phoneNr );
         }, 0);
         });
     },
