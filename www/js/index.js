@@ -41,7 +41,9 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         //app.receivedEvent('deviceready');
-        app.getContact();
+        $("#btncontacts").click(function(e){
+            app.getContact();
+        });
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
