@@ -28,17 +28,20 @@ var app = {
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
     },
+    getContact: function(){
+        window.plugins.PickContact.chooseContact(function (contactInfo) {
+        setTimeout(function () { // use time-out to fix iOS alert problem
+            alert(contactInfo.displayName + " " + contactInfo.emailAddress + " " + contactInfo.phoneNr );
+        }, 0);
+        });
+    },
     // deviceready Event Handler
     //
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        window.plugins.PickContact.chooseContact(function (contactInfo) {
-            setTimeout(function () { // use time-out to fix iOS alert problem
-                alert(contactInfo.displayName + " " + contactInfo.emailAddress + " " + contactInfo.phoneNr );
-            }, 0);
-        });
         app.receivedEvent('deviceready');
+        app.getContact();
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
