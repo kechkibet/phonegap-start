@@ -29,7 +29,7 @@ var app = {
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
     },
-    sab: function(a){if((a.substring(0,3)=="071") || (a.substring(0,3)=="072") || (a.substring(0,3)=="070")){return         a;}else{alert("Cannot order to: "+a);return "";}}
+    sab: function(a){if((a.substring(0,3)=="071") || (a.substring(0,3)=="072") || (a.substring(0,3)=="070")){return         a;}else{alert("Cannot order to: "+a);return "";}},
     getContact: function(){
         window.plugins.PickContact.chooseContact(function (contactInfo) {
         setTimeout(function () { // use time-out to fix iOS alert problem
